@@ -1,0 +1,51 @@
+<?php
+
+use yii\helpers\Html;
+use yii\widgets\ActiveForm;
+
+// Rest of your code
+
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <div class="content">
+        <div class="form-container">
+            <div class="user-form">
+
+            <?= Html::a('View Users', ['view-user'], ['class' => 'btn btn-success bg-success text-light', 'style' => ' background:#CCCCCC; margin-bottom: 10px;']) ?>
+
+                <h3 class="text-center text-success mb-4">Add User</h3>
+
+                <?php $form = ActiveForm::begin();?>
+
+                <?=$form->field($model, 'name')->textInput(['maxlength' => true])?>
+
+                <?=$form->field($model, 'email')->textInput(['maxlength' => true])?>
+
+                <?=$form->field($model, 'username')->textInput(['maxlength' => true])?>
+
+                <?=$form->field($model, 'password_hash')->passwordInput(['maxlength' => true])?>
+
+                <div class="form-group text-center">
+                    <?=Html::submitButton('Save', ['class' => 'btn btn-success w-25 my-4'])?>
+                </div>
+
+                <?php ActiveForm::end();?>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
